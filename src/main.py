@@ -16,7 +16,7 @@ def clear_names(file_name: str) -> list:
     return new_names_list
 
 
-def is_cyrillic(name_item:str) -> bool:
+def is_cyrillic(name_item: str) -> bool:
     """Проверка на вхождение кириллицы в строку"""
     return bool(re.search("[а-яА-Я]", name_item))
 
@@ -56,8 +56,5 @@ if __name__ == "__main__":
     #     '\n'.join(filtered_names)
     # )
 
-    filtered_names = (filter_english_names(cleared_name))
-    save_to_file(
-        'english_names.txt',
-        '\n'.join(filtered_names)
-    )
+    filtered_names = filter_english_names(cleared_name)
+    save_to_file("english_names.txt", "\n".join(filtered_names))
